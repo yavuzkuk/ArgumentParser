@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	Structs "github.com/yavuzkuk/argumentParser/Struct"
 	"os"
+
+	Structs "github.com/yavuzkuk/ArgumentParser/Struct"
 )
 
 func main() {

@@ -1,3 +1,3 @@
-module github.com/yavuzkuk/g
+module github.com/yavuzkuk/ArgumentParser
 
 go 1.23.4
