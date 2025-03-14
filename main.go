@@ -13,6 +13,8 @@ func main() {
 	enteredFlag := Structs.FlagParse(arguments)
 	var definedFlags []Structs.Flag
 
+	var banner string = "Example banner value"
+
 	definedFlags = append(definedFlags, Structs.Flag{
 		ShortName: "-h",
 		LongName:  "--help",
@@ -68,6 +70,6 @@ func main() {
 		Default:   true,
 	})
 
-	flags := Structs.GetMain(arguments, enteredFlag, definedFlags)
+	flags := Structs.GetMain(arguments, enteredFlag, definedFlags, banner)
 	fmt.Println(flags)
 }

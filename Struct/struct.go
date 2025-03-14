@@ -24,13 +24,11 @@ func Ternary(condition bool, a string, b string) string {
 }
 
 func Help(flags []Flag) {
-	fmt.Println("Bu araç CLI aracılıgıyla girilmis olan flag degerlerini toplamak icin oluşturulmustur\n")
 	space := strings.Repeat(" ", 10)
 	for _, flag := range flags {
 		fmt.Println(flag.ShortName, "/", flag.LongName, space, flag.Usage, "|", flag.Desc, Ternary(flag.Required, "| Zorunlu", "| Zorunlu değil"))
 	}
 
-	fmt.Println("go run main.go -u <link> -w <wordlist>")
 }
 
 func FlagParse(arguments []string) map[string]string {
@@ -123,7 +121,7 @@ func GetFlagsValue(enteredFlags map[string]string, flags []Flag) {
 
 }
 
-func GetMain(arguments []string, enteredFlag map[string]string, flags []Flag) map[string]string {
+func GetMain(arguments []string, enteredFlag map[string]string, flags []Flag, banner string) map[string]string {
 	if len(arguments) == 0 {
 		Help(flags)
 	} else if enteredFlag["--help"] == "help" || enteredFlag["-h"] == "help" {
